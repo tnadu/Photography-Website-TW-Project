@@ -1,7 +1,11 @@
-* {
+html {
+    display: inline-block;
+}
+
+body {
     box-sizing: border-box;
+    display: flex;
     margin: 0;
-    padding: 0;
     color: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
@@ -9,10 +13,10 @@
 }
 
 body {
-    background-color: rgb(37, 42, 42);
+    background-color: rgb(37, 37, 37);
 }
 
-.logo {
+.logo-image {
     width: 60px;
     cursor: pointer;
     margin-right: 5px;
@@ -21,6 +25,7 @@ body {
 
 .logo-text {
     margin-right: auto;
+    cursor: pointer;
     margin-left: 0;
     font-size: 38px;
     margin-top: 18px;
@@ -28,11 +33,12 @@ body {
     font-weight: 600;
 }
 
-.navigation {
+.buttons {
     margin-right: 40px;
+    padding: 0;
 }
 
-.button {
+.menu {
     list-style: none;
     display: inline-block;
     padding: 0 15px;
@@ -42,21 +48,53 @@ body {
 }
 
 .button:hover {
-    color: rgb(146, 161, 172);
+    color: rgb(146, 146, 146);
 }
 
 nav {
+    order: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     position: fixed;
-    width: 96%;
-    top: 0;
-    padding: 5px 0;
-    margin-left: 2%;
-    margin-right: 2%;
-    border-color: rgb(255, 255, 255);
-    border-style: solid;
-    border-radius: 5px;
-    border-width: 0 0 4px 0;
+    width: 100%;
+    margin: auto;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 5px 0 5px rgb(26, 26, 26);
+}
+
+.main {
+    display: inline-block;
+    order: 1;
+    float: none;
+    clear: none;
+}
+
+.main-container {
+    width: 100%;
+    height: 200px;
+    margin: 20px 20px 20px 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .logo-text {
+        display: none;
+    }
+    
+    .nav {
+        flex-wrap: wrap;
+    }
+
+    .logo-image {
+        margin-right: auto;
+        margin-left: 20px;
+    }
+
+    .menu {
+        padding: 0 7px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 990px) {
+
 }
