@@ -13,19 +13,22 @@ body {
 
 .logo-image {
     width: 60px;
-    cursor: pointer;
     margin-right: 5px;
     margin-left: 50px;   
 }
 
 .logo-text {
     margin-right: auto;
-    cursor: pointer;
     margin-left: 0;
     font-size: 38px;
     margin-top: 18px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 .buttons {
@@ -34,20 +37,17 @@ body {
 }
 
 .menu {
-    list-style: none;
     display: inline-block;
     padding: 0 15px;
-    cursor: default;
     transition: all 0.4s;
     margin-top: 15px;
 }
 
-.button:hover {
+.menu-button-anchor:hover {
     color: rgb(146, 146, 146);
 }
 
 nav {
-    order: 0;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -121,13 +121,6 @@ footer {
     text-align: center;
 }
 
-.footer-text {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-}
-
 .footer-text:hover {
     color: rgb(146, 146, 146);
 }
@@ -158,17 +151,9 @@ footer {
         display: none;
     }
 
-    .nav {
-        flex-wrap: wrap;
-    }
-
-    .logo-image-anchor {
+    .logo-image {
         margin-right: auto;
         margin-left: 20px;
-    }
-
-    .logo-image {
-        margin-left: 10px;
     }
 
     .menu {
