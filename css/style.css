@@ -1,0 +1,196 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(37, 37, 37);
+}
+
+.logo-image {
+    width: 60px;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-left: 50px;   
+}
+
+.logo-text {
+    margin-right: auto;
+    cursor: pointer;
+    margin-left: 0;
+    font-size: 38px;
+    margin-top: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+}
+
+.buttons {
+    margin-right: 40px;
+    padding: 0;
+}
+
+.menu {
+    list-style: none;
+    display: inline-block;
+    padding: 0 15px;
+    cursor: default;
+    transition: all 0.4s;
+    margin-top: 15px;
+}
+
+.button:hover {
+    color: rgb(146, 146, 146);
+}
+
+nav {
+    order: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: fixed;
+    z-index:9999;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(28, 28, 28);
+    box-shadow: 3px 0 2px rgb(26, 26, 26);
+}
+
+.main-container {
+    position: relative;
+    width: calc(100% - 400px);
+    height: 100%;
+    margin: 90px 160px 20px 160px;
+    background-color: rgb(32, 32, 32);
+    box-shadow: 0 0 3px 1px rgb(26, 26, 26);
+    border-style: solid;
+    border-width: 0;
+    border-radius: 10px;
+    padding: 30px 15px 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.photo-container {
+    position: relative;
+    width: calc(30% - 20px);
+    margin-bottom: 30px;
+    border-style: solid;
+    border-width: 0;
+    border-radius: 6px;
+}
+
+.photo {
+    width: 100%;
+    border-style: solid;
+    border-width: 0;
+    border-radius: 6px;
+}
+
+.photo-container:hover .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 6px);
+    background-color: rgb(128, 128, 128);
+    opacity: 0.05;
+    border-style: solid;
+    border-width: 0;
+    border-radius: 6px;
+    transition: all 0.8s;
+}
+
+.photo-container:hover {
+    width: 40%;
+    transition: all 0.3s;
+}
+
+footer {
+    padding: 15px;
+    background-color: rgb(20, 20, 20);
+    cursor: default;
+    text-align: center;
+}
+
+.footer-text {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.footer-text:hover {
+    color: rgb(146, 146, 146);
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .main-container {
+        width: calc(100% - 125px);
+        margin: 90px 40px 20px 40px;
+        padding: 30px 20px 0 20px;
+    }
+    
+    .photo-container {
+        width: calc(50% - 20px);
+        margin-bottom: 30px;
+    }
+    
+    .photo-container:hover .overlay {
+        height: calc(100% - 6px);
+    }
+
+    .photo-container:hover {
+        width: 52%;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        display: none;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+    }
+
+    .logo-image-anchor {
+        margin-right: auto;
+        margin-left: 20px;
+    }
+
+    .logo-image {
+        margin-left: 10px;
+    }
+
+    .menu {
+        padding: 0 7px;
+    }
+
+    .main-container {
+        width: calc(100% - 145px);
+        margin: 90px 50px 20px 50px;
+        padding: 30px 20px 0 20px;
+    }
+    
+    .photo-container {
+        width: calc(100% - 20px);
+        margin-bottom: 30px;
+    }
+    
+    .photo-container:hover .overlay {
+        height: calc(100% - 6px);
+    }
+
+    .photo-container:hover {
+        width: 120%;
+    }
+}
