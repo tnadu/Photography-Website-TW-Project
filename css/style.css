@@ -115,15 +115,25 @@ nav {
 }
 
 footer {
-    padding: 15px;
+    padding: 40px  120px;
     background-color: rgb(20, 20, 20);
-    cursor: default;
-    text-align: center;
 }
 
-.footer-text:hover {
+.footer-copyright {
+    text-align: end;
+    margin-top: 40px;
+}
+
+#footer-title {
+    font-size: 30px;
+}
+
+#footer-copyright-text:hover {
     color: rgb(146, 146, 146);
 }
+
+
+
 
 @media (min-width: 768px) and (max-width: 990px) {
     .main-container {
@@ -145,6 +155,9 @@ footer {
         width: 52%;
     }
 }
+
+
+
 
 @media (max-width: 768px) {
     .logo-text {
