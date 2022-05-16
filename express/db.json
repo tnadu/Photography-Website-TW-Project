@@ -1,29 +1,32 @@
 {
-    "dogs": [
+    "location": [
         {
             "id": "5eadf350-105e-11ea-983f-f5983827844a",
-            "name": "AFFENPINSCHER1",
-            "img": "https://images.dog.ceo/breeds/affenpinscher/n02110627_8099.jpg"
+            "url": "../images/color/IMG_6958.jpg",
+            "description": "Honouring a great thinker"
         },
         {
             "id": "71ed9fb0-105e-11ea-983f-f5983827844a",
-            "name": "AKITA",
-            "img": "https://images.dog.ceo//breeds//akita//An_Akita_Inu_resting.jpg"
+            "url": "../images/color/IMG_8619.jpg",
+            "description": "Burn-in"
         },
         {
             "id": "89256140-105e-11ea-983f-f5983827844a",
-            "name": "CHIHUAHUA",
-            "img": "https://images.dog.ceo/breeds/chihuahua/n02085620_7613.jpg"
+            "url": "../images/color/IMG_9997.jpg",
+            "description": "Breathe"
         },
         {
             "id": "898c1250-105e-11ea-983f-f5983827844a",
-            "name": "LHASA",
-            "img": "https://images.dog.ceo/breeds/lhasa/n02098413_7358.jpg"
+            "url": "../images/color/IMG_2461.jpg",
+            "description": "Taken away"
         },
         {
             "id": "8a7fc120-105e-11ea-983f-f5983827844a",
-            "name": "HOUND",
-            "img": "https://images.dog.ceo/breeds/hound-afghan/n02088094_2626.jpg"
+            "url": "../images/color/IMG_2349.jpg",
+            "description": "So mellow and patient"
+        },
+        {
+            "id": "e9e9dc9d-fb2e-4766-9b53-1e30ce7a81e0"
         }
     ]
 }

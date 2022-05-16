@@ -13,7 +13,7 @@ app.use(morgan("tiny"));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use(require('./controller/dogController'))
+app.use(require('./controller/Controller'))
 
 // Starting the server
 app.listen("3000", () =>
