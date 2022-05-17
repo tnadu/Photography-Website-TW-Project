@@ -7,10 +7,22 @@ module.exports.getAllPhotos = (type) => {
 }
 
 module.exports.addPhoto = (newPhoto, type) => {
-    const photoList = Repository.readJSONFile(type);
-    newPhoto.id=uuid.v4.apply();
-    photoList.push(newPhoto);
-    Repository.writeJSONFile(photoList, type);
+    if (type===1) {
+        const color = Repository.readJSONFile(1);
+        const bw = Repository.readJSONFile(0);
+        newPhoto.id=uuid.v4.apply();
+        color.push(newPhoto);
+        Repository.writeJSONFile(color, bw, 1); 
+    }
+    
+    else {
+        const color = Repository.readJSONFile(1);
+        const bw = Repository.readJSONFile(0);
+        newPhoto.id=uuid.v4.apply();
+        bw.push(newPhoto);
+        Repository.writeJSONFile(color, bw, 1); 
+    }
+    
     return newPhoto
 }
 
@@ -25,8 +37,19 @@ module.exports.updatePhoto = (photoID, photoURL, photoDescription, type) => {
             foundPhoto=photoList[i];
             break;
         }
-  
-    Repository.writeJSONFile(photoList, type);
+    
+    if (type===1) {
+        const color = photoList;
+        const bw = Repository.readJSONFile(0);
+        Repository.writeJSONFile(color, bw, 1); 
+    }
+    
+    else {
+        const color = Repository.readJSONFile(1);
+        const bw = photoList;
+        Repository.writeJSONFile(color, bw, 1); 
+    }
+
     return foundPhoto;
 }
 
@@ -40,6 +63,18 @@ module.exports.removePhoto = (id, type) => {
             break;
         }
     
+    if (type===1) {
+        const color = photoList;
+        const bw = Repository.readJSONFile(0);
+        Repository.writeJSONFile(color, bw, 1); 
+    }
+    
+    else {
+        const color = Repository.readJSONFile(1);
+        const bw = photoList;
+        Repository.writeJSONFile(color, bw, 1); 
+    }
+
     Repository.writeJSONFile(photoList);
     return foundPhoto
 }

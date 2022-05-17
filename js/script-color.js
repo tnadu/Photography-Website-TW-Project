@@ -1,10 +1,10 @@
 let currentID;
 
-function fetch() {
-    let mainContainer = document.getElementsByClassName("main-container")[0];
+function fetchPhotos() {
+    let mainContainer = document.getElementsByClassName("main-container")[1];
 
     fetch(
-        'http://localhost:3000/photosColor',
+        'http://localhost:8080/photosColor',
         {
             method:'get'
         }   
@@ -14,9 +14,6 @@ function fetch() {
             for(let i=0; i<data.length; i++) {
                 let photoContainer = document.createElement('div');
                 photoContainer.setAttribute('class', 'photo-container');
-                
-                let overlay = document.createElement('div');
-                overlay.setAttribute('class', 'overlay');
             
                 let descriptionTitle = document.createElement('div');
                 descriptionTitle.setAttribute('class', 'description-title');
@@ -42,25 +39,23 @@ function fetch() {
                 }
 
                 let Delete = document.createElement('button');
-                edit.setAttribute('class', 'created');
                 Delete.innerText = 'Delete';
                 Delete.onclick = function() {
                     Delete(data[i].id);
                 }
                 
                 photoContainer.appendChild(photo);
-                photoContainer.appendChild(overlay);
                 photoContainer.appendChild(descriptionTitle);
                 photoContainer.appendChild(description);
                 photoContainer.appendChild(edit);
                 photoContainer.appendChild(Delete);
+                mainContainer.appendChild(photoContainer);
             }
         })
     })
 }
 
 function add() {
-    let photoContainer = document.createElement('div');
     let url = document.getElementById('url').value;
     let descriptionInput = document.getElementById('description-input').value;
 
@@ -69,7 +64,7 @@ function add() {
         description: descriptionInput
     }
 
-    fetch('http://localhost:3000/photosColor', 
+    fetch('http://localhost:8080/photosColor', 
         {
             method:'post',
             headers: {'Content-Type': 'application/json'},
@@ -88,7 +83,7 @@ function update() {
         description: descriptionInput
     }
 
-    fetch('http://localhost:3000/photosColor' + currentID, 
+    fetch('http://localhost:8080/photosColor' + currentID, 
     {
         method: 'put',
         headers:  {'Content-Type': 'application/json'},
@@ -102,7 +97,7 @@ function Delete(id) {
     let name = document.getElementById('name').value;
     let photo = document.getElementById('url').value;
 
-    fetch('http://localhost:3000/PhotosColor' + id, 
+    fetch('http://localhost:8080/PhotosColor' + id, 
     {
         method: 'delete'
     }).then(function(response) {
@@ -110,4 +105,4 @@ function Delete(id) {
     })
 }
 
-fetch();
+fetchPhotos();

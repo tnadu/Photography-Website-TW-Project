@@ -142,22 +142,6 @@ button {
     margin-bottom: 8px;
 }
 
-.photo-container:hover .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 6px);
-    background-color: rgb(128, 128, 128);
-    opacity: 0.05;
-    border-style: solid;
-    border-width: 0;
-    border-radius: 6px;
-    transition: all 0.8s;
-}
-
 .photo-container:hover {
     width: 40%;
     transition: all 0.3s;
@@ -194,10 +178,6 @@ footer {
     .photo-container {
         width: calc(50% - 20px);
         margin-bottom: 30px;
-    }
-    
-    .photo-container:hover .overlay {
-        height: calc(100% - 6px);
     }
 
     .photo-container:hover {
@@ -241,10 +221,6 @@ footer {
     .photo-container {
         width: calc(100% - 20px);
         margin-bottom: 30px;
-    }
-    
-    .photo-container:hover .overlay {
-        height: calc(100% - 6px);
     }
 
     .photo-container:hover {

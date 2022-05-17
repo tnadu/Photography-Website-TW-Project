@@ -1,11 +1,10 @@
 {
-  "name": "laborator-10",
+  "name": "Photography Project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Uni assignment in the CS Web Course of the 'University of Bucharest'",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "Toma",
   "license": "ISC"

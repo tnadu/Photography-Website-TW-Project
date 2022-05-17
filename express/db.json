@@ -1,5 +1,5 @@
 {
-    "location": [
+    "photosColor": [
         {
             "id": "5eadf350-105e-11ea-983f-f5983827844a",
             "url": "../images/color/IMG_6958.jpg",
@@ -26,7 +26,41 @@
             "description": "So mellow and patient"
         },
         {
-            "id": "e9e9dc9d-fb2e-4766-9b53-1e30ce7a81e0"
+            "id": "832defe3-50c6-4c67-ad6f-efeb1bb66e40",
+            "url": "../images/color/IMG_2467.jpg",
+            "description": "Light me up"
+        },
+        {
+            "url": "../images/color/IMG_7231.jpg",
+            "description": "Look what I caught!",
+            "id": "3ec0df7b-1e22-42c0-b55f-aed0e2f9feb8"
+        },
+        {
+            "url": "../images/color/IMG_2889.jpg",
+            "description": "Asleep",
+            "id": "ed1b78c4-f016-4bd1-95fd-a5547a52c507"
+        },
+        {
+            "url": "../images/color/IMG_2570.jpg",
+            "description": "May the ruins listen",
+            "id": "99e1587a-9b4e-4433-92d5-368e6f6d1fa5"
+        },
+        {
+            "url": "../images/color/IMG_20201121_094752.jpg",
+            "description": "Out",
+            "id": "25237db8-0ea3-4a0d-97b7-336dfa8d5f45"
+        }
+    ],
+    "photosBW": [
+        {
+            "url": "            \"url\": \"../images/color/IMG_6958.jpg\",",
+            "description": "",
+            "id": "4d7b279a-dd76-42b9-8383-c9d0a880be1e"
+        },
+        {
+            "url": "            \"url\": \"../images/color/IMG_6958.jpg\",asa",
+            "description": "asda",
+            "id": "1991ecea-e0cc-4a55-9ec1-164dfc979280"
         }
     ]
 }

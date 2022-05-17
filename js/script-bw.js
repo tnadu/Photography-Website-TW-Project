@@ -1,10 +1,10 @@
 let currentID;
 
-function fetch() {
-    let mainContainer = document.getElementsByClassName("main-container")[0];
+function fetchPhotos() {
+    let mainContainer = document.getElementsByClassName("main-container")[1];
 
     fetch(
-        'http://localhost:3000/photosBW?resourceIdentifier=BW',
+        'http://localhost:8080/photosBW',
         {
             method:'get'
         }   
@@ -14,9 +14,6 @@ function fetch() {
             for(let i=0; i<data.length; i++) {
                 let photoContainer = document.createElement('div');
                 photoContainer.setAttribute('class', 'photo-container');
-                
-                let overlay = document.createElement('div');
-                overlay.setAttribute('class', 'overlay');
             
                 let descriptionTitle = document.createElement('div');
                 descriptionTitle.setAttribute('class', 'description-title');
@@ -42,25 +39,23 @@ function fetch() {
                 }
 
                 let Delete = document.createElement('button');
-                edit.setAttribute('class', 'created');
                 Delete.innerText = 'Delete';
                 Delete.onclick = function() {
-                    Delete(data[i].id);
+                    deletePhoto(data[i].id);
                 }
                 
                 photoContainer.appendChild(photo);
-                photoContainer.appendChild(overlay);
                 photoContainer.appendChild(descriptionTitle);
                 photoContainer.appendChild(description);
                 photoContainer.appendChild(edit);
                 photoContainer.appendChild(Delete);
+                mainContainer.appendChild(photoContainer);
             }
         })
     })
 }
 
 function add() {
-    let photoContainer = document.createElement('div');
     let url = document.getElementById('url').value;
     let descriptionInput = document.getElementById('description-input').value;
 
@@ -69,14 +64,11 @@ function add() {
         description: descriptionInput
     }
 
-    fetch('http://localhost:3000/photosBW', 
+    fetch('http://localhost:8080/photosBW', 
         {
             method:'post',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                type: 'bw',
-                newPhoto: newPhoto
-            })
+            body: JSON.stringify(newPhoto)
         }).then(function(response) {
             window.location.reload();
         })
@@ -91,7 +83,7 @@ function update() {
         description: descriptionInput
     }
 
-    fetch('http://localhost:3000/photosBW' + currentID, 
+    fetch('http://localhost:8080/photosBW' + currentID, 
     {
         method: 'put',
         headers:  {'Content-Type': 'application/json'},
@@ -101,11 +93,8 @@ function update() {
     })
 }
 
-function Delete(id) {
-    let name = document.getElementById('name').value;
-    let photo = document.getElementById('url').value;
-
-    fetch('http://localhost:3000/photosBW' + id, 
+function deletePhoto(id) {
+    fetch('http://localhost:8080/photosBW' + id, 
     {
         method: 'delete'
     }).then(function(response) {
@@ -113,4 +102,4 @@ function Delete(id) {
     })
 }
 
-fetch();
+fetchPhotos();
