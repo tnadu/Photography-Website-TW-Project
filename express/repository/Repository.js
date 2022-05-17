@@ -9,7 +9,7 @@ module.exports.readJSONFile = (type) => {
   }
   
 // Writing function from db.json file
-module.exports.writeJSONFile = (color, bw, type) => {
+module.exports.writeJSONFile = (color, bw) => {
   fs.writeFileSync(
     "db.json",
     JSON.stringify({ photosColor: color, photosBW: bw }, null, 4),

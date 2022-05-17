@@ -5,13 +5,11 @@ const Service = require('../service/Service');
 
 // Create
 router.post("/photosColor", (req, res) => {
-    console.log(req.query);
     let newPhoto = Service.addPhoto(req.body, 1);
     res.status(200).send(newPhoto);
   });
   
 router.post("/photosBW", (req, res) => {
-  console.log(req.query);
   let newPhoto = Service.addPhoto(req.body, 0);
   res.status(200).send(newPhoto);
 });
@@ -37,25 +35,25 @@ router.get("/photosBW", (req, res) => {
 
 // Update
 router.put("/photosColor/:id", (req, res) => {
-  let foundPhoto = Service.updatePhoto(req.params.id, req.body.url, req.body.description, 1);
-  if (foundPhoto!==null) res.status(200).send(foundPhoto);
+  let foundPhoto = Service.updatePhoto(req, 1);
+  if (foundPhoto!==undefined) res.status(200).send(foundPhoto);
   else res.status(204).send('No photo found!');
 });
 
 router.put("/photosBW/:id", (req, res) => {
-  let foundPhoto = Service.updatePhoto(req.params.id, req.body.url, req.body.description, 0);
-  if (foundPhoto!==null) res.status(200).send(foundPhoto);
+  let foundPhoto = Service.updatePhoto(req, 0);
+  if (foundPhoto!==undefined) res.status(200).send(foundPhoto);
   else res.status(204).send('No photo found!');
 });
   
 // Delete
 router.delete("/photosColor/:id", (req, res) => {
-    let foundPhoto = Service.removePhoto(req.params.id, 1);
-    res.status(200).send('Photo deleted!');
+  Service.removePhoto(req.params.id, 1);
+  res.status(200).send('Photo deleted!');
 });
   
 router.delete("/photosBW/:id", (req, res) => {
-  let foundPhoto = Service.removePhoto(req.params.id, 0);
+  Service.removePhoto(req.params.id, 0);
   res.status(200).send('Photo deleted!');
 });
 
